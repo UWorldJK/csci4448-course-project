@@ -1,1 +1,4 @@
-# csci4448-course-project
+# Ticket Management Project - CSCI4448
+
+## Jacob Kurry and Chiranth
+

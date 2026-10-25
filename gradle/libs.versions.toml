@@ -3,6 +3,12 @@
 
 [versions]
 guava = "33.5.0-jre"
+spring-boot = "3.3.4" 
 
 [libraries]
 guava = { module = "com.google.guava:guava", version.ref = "guava" }
+springBootStarterWeb = { group = "org.springframework.boot", name = "spring-boot-starter-web", version.ref = "spring-boot" }
+springBootStarterTest = { group = "org.springframework.boot", name = "spring-boot-starter-test", version.ref = "spring-boot" }
+
+[plugins]
+spring-boot = { id = "org.springframework.boot", version = "3.3.4" }
