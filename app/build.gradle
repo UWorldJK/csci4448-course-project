@@ -24,17 +24,23 @@ dependencies {
     implementation libs.guava
     implementation libs.springBootStarterWeb
     testImplementation libs.springBootStarterTest
-    testImplementation 'junit:junit:4.13.2'
+    implementation 'ch.qos.logback:logback-classic:1.5.17'
+
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+    testImplementation 'org.junit.platform:junit-platform-suite:1.10.0'
+
+    // BDD testing libraries
+    testImplementation 'io.cucumber:cucumber-picocontainer:7.21.1'
+    testImplementation 'io.cucumber:cucumber-java:7.21.1'
+    testImplementation 'io.cucumber:cucumber-junit-platform-engine:7.21.1'
 }
 
-testing {
-    suites {
-        // Configure the built-in test suite
-        test {
-            // Use JUnit4 test framework
-            useJUnit('4.13.2')
-        }
-    }
+test {
+    // Configure the built-in test suite
+    // Use JUnit4 test framework
+    useJUnitPlatform()
 }
 
 // Apply a specific Java toolchain to ease working on different environments.
@@ -47,4 +53,10 @@ java {
 application {
     // Define the main class for the application.
     mainClass = 'org.example.App'
+}
+
+configurations {
+    cucumberRuntime {
+        extendsFrom testImplementation
+    }
 }
