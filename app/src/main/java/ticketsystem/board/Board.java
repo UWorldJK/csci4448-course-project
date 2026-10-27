@@ -29,6 +29,18 @@ public class Board implements IBoard {
     public void removeColumnHard() {}
     public void removeColumnSoft() {}
 
+    public EnumMap<ColumnType, Column> getColumns() {
+        return columns;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public List<Developer> getDevs() {
+        return devs;
+    }
+
 
 
     public static class Builder {
@@ -68,6 +80,10 @@ public class Board implements IBoard {
                 }
             }
             return this;
+        }
+
+        public Board build() {
+            return board;
         }
     }
 }
