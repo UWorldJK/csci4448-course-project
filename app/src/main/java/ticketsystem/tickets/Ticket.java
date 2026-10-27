@@ -14,7 +14,7 @@ public abstract class Ticket {
     private OffsetDateTime dueDate;
     private Integer pointEstimate;
 
-    private Ticket(String featureType, String taskDescription, Developer assignedBy, Priority priority) {
+    public Ticket(String featureType, String taskDescription, Developer assignedBy, Priority priority) {
         if (featureType == null || featureType.isEmpty()) {
             throw new IllegalArgumentException("Feature Type is Required");
         }
