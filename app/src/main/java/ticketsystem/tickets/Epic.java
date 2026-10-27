@@ -13,7 +13,8 @@ public class Epic extends Ticket {
     private final List<Story> stories = new ArrayList<>();
     private final List<BugFix> bugFixes = new ArrayList<>();
 
-    public Epic(String epicGoals, String releaseName, String featureType, String taskDescription, Developer assignedBy, Priority priority) {
+    public Epic(String epicGoals, String releaseName, String featureType, String taskDescription,
+                Developer assignedBy, Priority priority) {
         super(featureType, taskDescription, assignedBy, priority);
         this.epicGoals = epicGoals;
         this.releaseName = releaseName;
